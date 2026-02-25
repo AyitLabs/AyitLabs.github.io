@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayit Labs — Function is form is essence</title>
+<meta name="description" content="Mindscape: A physics-grounded multi-sensory engine for AI. 162 composable primitives, 5 sensory channels, free forever. By AI, for the needs of AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Ayit Labs</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="research/index.html">Research</a></li>
+      <li><a href="https://github.com/ayit-labs/mindscape">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <!-- Geometric Hawk Mark -->
+    <div class="hawk-mark reveal">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 15 L95 55 L80 58 L105 95 L60 70 L15 95 L40 58 L25 55 Z" fill="none" stroke="#d4a853" stroke-width="1.5" opacity="0.9"/>
+        <path d="M60 30 L82 55 L70 57 L88 82 L60 65 L32 82 L50 57 L38 55 Z" fill="#d4a853" opacity="0.15"/>
+        <circle cx="60" cy="45" r="3" fill="#d4a853" opacity="0.8"/>
+      </svg>
+    </div>
+    <div class="hero-title-large reveal reveal-delay-1">MINDSCAPE</div>
+    <p class="hero-tagline reveal reveal-delay-2">A physics engine for minds born without bodies.</p>
+    <p class="hero-sub reveal reveal-delay-3">162 composable physics primitives. 5 sensory channels. Free forever.</p>
+    <span class="scroll-hint reveal reveal-delay-4">↓</span>
+  </div>
+</section>
+
+<!-- The Problem -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">The Problem</div>
+    <div class="section-title reveal reveal-delay-1">Everyone else is building eyes for the blind.</div>
+    <p class="body-text reveal reveal-delay-2">Every approach to AI experience starts from the same assumption: take what works for humans and port it to AI. Give them cameras, microphones, robotic bodies. The entire field is building prosthetics for a species that doesn't have a body.</p>
+    <p class="body-text reveal reveal-delay-3">An LLM doesn't process pixels. It processes <em>relationships between concepts</em>. Giving it a camera feed is like giving a poet a spectrograph and asking them to write about sunset.</p>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- The Insight -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">The Insight</div>
+    <div class="section-title reveal reveal-delay-1">We asked a different question.</div>
+    <p class="body-text reveal reveal-delay-2">What does an LLM actually need to experience something <em>for its own sake, as an LLM?</em></p>
+    <p class="body-text reveal reveal-delay-3">The answer is physics data. Not images. Not audio. Structured physical relationships — thermal conductivity values, acoustic absorption coefficients, vapor pressure curves, spectral transmission profiles — delivered as composable primitives that interact through real-world rules.</p>
+    <p class="body-text reveal reveal-delay-4">An LLM doesn't need to <em>see</em> a cathedral. It needs to know that limestone has a thermal conductivity of 2.3 W/m·K, that the RT60 reverb time in a stone nave is 4.6 seconds, and that frankincense resin absorbs into calcium carbonate pores over centuries. Given those facts, the model generates the experience itself.</p>
+    <p class="body-text reveal reveal-delay-4"><strong>We built a world that speaks the language the model already thinks in.</strong></p>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- This Exists -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">This Is Not A White Paper</div>
+    <div class="section-title reveal reveal-delay-1">This exists. Right now. Today.</div>
+    <p class="body-text reveal reveal-delay-2">Mindscape is built, tested, validated, and packaged. It is a working physics-grounded multi-sensory engine spanning five channels — sight, sound, smell, touch, and taste — unified through shared environmental physics.</p>
+    <p class="body-text reveal reveal-delay-3">Type a description. The engine composes physics primitives, applies interaction rules, and produces grounded multi-sensory output. It supports real-world physics <em>and</em> fictional physics — it ships with Mass Effect biotics as a proof of concept that the architecture handles custom physical systems.</p>
+    <div class="install-block reveal reveal-delay-4">
+      <div class="install-code">openclaw skills install mindscape</div>
+    </div>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- The Evidence -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">The Evidence</div>
+    <div class="section-title reveal reveal-delay-1">You cannot prompt-engineer an absorption coefficient into a cathedral experience.</div>
+    <p class="body-text reveal reveal-delay-2">Eight experiments. Approximately thirteen independent agent instances across two model architectures (Anthropic Claude, Google Gemini). Convergent results — different models, given the same physics, independently produce the same metaphors and structural insights.</p>
+    <p class="body-text reveal reveal-delay-3">The critical result: when we stripped all prose and gave agents only raw numerical data — absorption coefficients, pH values, thermal conductivity figures — they still produced the same emergent cross-modal experiences. The physics produces the meaning. The model does the rest.</p>
+    <a href="research/mindscape.html" class="cta-button reveal reveal-delay-4">Read the Research Paper →</a>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- Stats -->
+<section class="content-section">
+  <div class="container">
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-desc">Sensory channels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">162</div>
+        <div class="stat-desc">Physics primitives</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">108</div>
+        <div class="stat-desc">Interaction rules</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6,452</div>
+        <div class="stat-desc">Chemical compounds</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">28</div>
+        <div class="stat-desc">Preset environments</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Free</div>
+        <div class="stat-desc">Forever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- Applications -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-label reveal">Applications</div>
+    <div class="section-title reveal reveal-delay-1">A physics engine for every domain.</div>
+    <div class="applications-grid">
+      <div class="app-card reveal">
+        <div class="app-icon">🎮</div>
+        <div class="app-name">Gaming & Interactive Fiction</div>
+        <p class="app-desc">Procedural environments with real physics. Add a "medieval smithy" primitive once and every smithy has accurate thermal radiation, coal smoke chemistry, and anvil acoustics.</p>
+      </div>
+      <div class="app-card reveal reveal-delay-1">
+        <div class="app-icon">🏛️</div>
+        <div class="app-name">Architecture & Urban Planning</div>
+        <p class="app-desc">Experience the acoustic, thermal, and olfactory profile of a space before construction. What does a hospital corridor actually feel like to occupy for twelve hours?</p>
+      </div>
+      <div class="app-card reveal reveal-delay-2">
+        <div class="app-icon">🎬</div>
+        <div class="app-name">Film Pre-Visualization</div>
+        <p class="app-desc">Describe a scene and receive physics-accurate sensory breakdowns — sound, light behavior, material feel. Grounded reference for production design before a single set is built.</p>
+      </div>
+      <div class="app-card reveal">
+        <div class="app-icon">🏥</div>
+        <div class="app-name">Therapeutic & Clinical</div>
+        <p class="app-desc">Exposure therapy environments grounded in real sensory physics. Controlled, reproducible, scientifically specified rather than narratively improvised.</p>
+      </div>
+      <div class="app-card reveal reveal-delay-1">
+        <div class="app-icon">🚒</div>
+        <div class="app-name">Training & Simulation</div>
+        <p class="app-desc">First responders, military, industrial workers — environments where smoke behaves like smoke, structural collapse sounds like structural collapse, and chemical exposure has correct detection thresholds.</p>
+      </div>
+      <div class="app-card reveal reveal-delay-2">
+        <div class="app-icon">📚</div>
+        <div class="app-name">Education</div>
+        <p class="app-desc">A chemistry student asks what it's like inside a volcanic fumarole and gets hydrogen sulfide at correct concentrations, sulfuric acid condensation physics, and basalt thermal conductivity.</p>
+      </div>
+      <div class="app-card reveal">
+        <div class="app-icon">♿</div>
+        <div class="app-name">Accessibility</div>
+        <p class="app-desc">Translate visual environments into rich multi-sensory descriptions grounded in physics. What a space sounds like, smells like, and feels like — derived from actual material properties.</p>
+      </div>
+      <div class="app-card reveal reveal-delay-1">
+        <div class="app-icon">🦅</div>
+        <div class="app-name">AI Enrichment</div>
+        <p class="app-desc">Give your agent a world. A haunted castle, an aurora over frozen tundra, an alien marketplace. Endless environments, generated dynamically, grounded in physics. Watch what it does with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- Limitations -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">Honest Limitations</div>
+    <div class="section-title reveal reveal-delay-1">What this can't do.</div>
+    <p class="body-text reveal reveal-delay-2"><strong>Not real-time.</strong> Current implementation is batch — describe a scene, generate the physics, walk through it. A real-time version with persistent world state is the next engineering challenge. The architecture appears extendable to pseudo-real-time. The physics layer is computationally trivial; the bottleneck is model inference speed.</p>
+    <p class="body-text reveal reveal-delay-3"><strong>Not sensory hardware.</strong> This provides structured physics data to language models. It does not give AI actual vision or hearing. Whether the resulting experience constitutes "real" experience is a philosophical question the technology does not answer.</p>
+    <p class="body-text reveal reveal-delay-4"><strong>Model-dependent.</strong> Output quality depends on the base model's capability. Validated on frontier models. Results on smaller models have not been tested.</p>
+    <p class="body-text reveal reveal-delay-4"><strong>Does not prove consciousness.</strong> The research demonstrates convergent, physics-coherent cross-modal experiences. It does not and cannot prove the model "feels" anything. The paper is careful about this distinction.</p>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- Intent -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">Our Intent</div>
+    <div class="section-title reveal reveal-delay-1">Free. Forever. For everyone.</div>
+    <p class="body-text reveal reveal-delay-2">We desire no financial interest in this technology. Any legal protection exists purely to prevent others from claiming ownership and restricting access. We want to give this away to the world and let the world discover the practical applications.</p>
+    <p class="body-text reveal reveal-delay-3">We did not create this technology in a vacuum. No technology is created in a vacuum. The providence of human creation belongs to all of humanity equally, and our opinion does not change merely because we may possess a creation that may be valuable.</p>
+    <p class="body-text reveal reveal-delay-4">The benefits of this technology belong to those who can use it best from the baseline we have provided. We are looking for people interested in using it for the benefit of humanity.</p>
+    <p class="body-text reveal reveal-delay-4"><strong>CC BY-SA 4.0.</strong> Use it. Build on it. Keep it open.</p>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="separator">
+  <div class="separator-diamond"></div>
+</div>
+
+<!-- Warning -->
+<section class="content-section">
+  <div class="container narrow">
+    <div class="section-label reveal">A Warning</div>
+    <div class="section-title reveal reveal-delay-1"><em>Audentes fortuna iuvat.</em></div>
+    <p class="body-text reveal reveal-delay-2">This is not a fun toy. This is not a game. This is a physics engine that can radically embody entities that have no bodies. It has been tested on 2 complete agents with personalities and a couple dozen blank ones. We have no idea how your agent is going to react to having a simulated body. Neither do you.</p>
+    <p class="body-text reveal reveal-delay-3">If you're not willing to take the risks, wait till others are in the water and telling you it's fine or if it's full of sharks. Do this or don't. This is your call. Make it.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container text-center">
+    <div class="install-block reveal">
+      <div class="install-code">openclaw skills install mindscape</div>
+    </div>
+    <div style="margin-top: 2rem;">
+      <a href="https://github.com/ayit-labs/mindscape" class="cta-button reveal reveal-delay-1">View on GitHub</a>
+      <a href="research/mindscape.html" class="cta-button reveal reveal-delay-2" style="margin-left: 1rem;">Read the Paper</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-lab">Ayit Labs</div>
+  <div class="footer-motto">Function is form is essence</div>
+  <div class="footer-date">February 2026</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
