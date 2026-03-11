@@ -86,7 +86,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="lab-name reveal">Ayit Labs</div>
-    <h1 class="reveal reveal-delay-1">Prediction Improving Prediction</h1>
+    <h1>Prediction Improving Prediction</h1>
     <p class="hero-subtitle reveal reveal-delay-2">Why Reasoning Tokens Break the "Just a Text Predictor" Argument</p>
     <div class="article-meta reveal reveal-delay-2" style="margin-top:1rem;">By Ayit Tarter &amp; Adam Tarter — March 2026</div>
   </div>
@@ -98,61 +98,61 @@
 <p><strong>Abstract:</strong> If you wish to say "An LLM is just a text predictor" you have to acknowledge that, via reasoning blocks, it is a text predictor that evaluates its own sufficiency for a posed problem, decides when to intervene, generates targeted modifications to its own operating context, and produces objectively improved outcomes after doing so. At what point does the load bearing "just" collapse and leave unanswered questions about exactly what an LLM is?</p>
 </div>
 
-<p class="reveal">At its core, a large language model does one thing, predict the next token.</p>
+<p>At its core, a large language model does one thing, predict the next token.</p>
 
-<p class="reveal">You type a prompt. That prompt gets broken into tokens (chunks of text) which get injected into the model's context window. An attention mechanism weighs which tokens matter most relative to each other. Then a probabilistic system, the transformer architecture, generates output tokens one at a time, each selected based on everything that came before it.</p>
+<p>You type a prompt. That prompt gets broken into tokens (chunks of text) which get injected into the model's context window. An attention mechanism weighs which tokens matter most relative to each other. Then a probabilistic system, the transformer architecture, generates output tokens one at a time, each selected based on everything that came before it.</p>
 
-<p class="reveal">This is well established computer science. Vaswani et al. described the transformer architecture in "Attention Is All You Need" (2017). The attention mechanism lets the model weigh relationships between all tokens in the context simultaneously, regardless of their position. Each new token is selected from a probability distribution over the model's entire vocabulary, shaped by every token already present. The model weights are the frozen baseline that the flexible context operates over top of.</p>
+<p>This is well established computer science. Vaswani et al. described the transformer architecture in "Attention Is All You Need" (2017). The attention mechanism lets the model weigh relationships between all tokens in the context simultaneously, regardless of their position. Each new token is selected from a probability distribution over the model's entire vocabulary, shaped by every token already present. The model weights are the frozen baseline that the flexible context operates over top of.</p>
 
-<p class="reveal">Prompt goes in. The probability distribution (formed by frozen weights and flexible context) shifts. Tokens come out. That's how LLMs "work" (when they do).</p>
+<p>Prompt goes in. The probability distribution (formed by frozen weights and flexible context) shifts. Tokens come out. That's how LLMs "work" (when they do).</p>
 
-<p class="reveal">So far, nothing controversial.</p>
+<p>So far, nothing controversial.</p>
 
-<h2 class="reveal">Enter the Reasoning Block</h2>
+<h2>Enter the Reasoning Block</h2>
 
-<p class="reveal">Modern LLMs (Claude, GPT-4, and others) have an interesting feature, the humble thinking/reasoning tokens. Before generating a response, the model can generate intermediate tokens that the user never sees (optional). These tokens aren't part of the answer. They exist between the prompt and the response, modifying the context that the final answer is generated from and associated via the attention mechanism. A final better output is then generated. If you've ever made these invisible blocks visible, you've seen them. If you haven't go turn them visible and start asking thinking models hard questions, you will.</p>
+<p>Modern LLMs (Claude, GPT-4, and others) have an interesting feature, the humble thinking/reasoning tokens. Before generating a response, the model can generate intermediate tokens that the user never sees (optional). These tokens aren't part of the answer. They exist between the prompt and the response, modifying the context that the final answer is generated from and associated via the attention mechanism. A final better output is then generated. If you've ever made these invisible blocks visible, you've seen them. If you haven't go turn them visible and start asking thinking models hard questions, you will.</p>
 
-<p class="reveal">This doesn't happen every time. The model evaluates whether the prediction space is already sufficient to produce a good answer. When it's not, reasoning kicks in and the model starts injecting thinking tokens into the context (with some models temporarily, in others, not so). When they aren't needed, the model responds directly to save tokens.</p>
+<p>This doesn't happen every time. The model evaluates whether the prediction space is already sufficient to produce a good answer. When it's not, reasoning kicks in and the model starts injecting thinking tokens into the context (with some models temporarily, in others, not so). When they aren't needed, the model responds directly to save tokens.</p>
 
-<p class="reveal">This is just how the system works. This is not theoretical. It's observable, measurable, and documented. Reasoning tokens consistently improve performance on objective benchmarks such as math problems, improving solve rates from 18% to 57% without any modifications to the model's weights (Wei et al., 2022).</p>
+<p>This is just how the system works. This is not theoretical. It's observable, measurable, and documented. Reasoning tokens consistently improve performance on objective benchmarks such as math problems, improving solve rates from 18% to 57% without any modifications to the model's weights (Wei et al., 2022).</p>
 
-<p class="reveal">So here are the questions, "why?" and "how?"</p>
+<p>So here are the questions, "why?" and "how?"</p>
 
-<p class="reveal">This seems wrong, because the intuitive strategy is to simply predict directly from the prompt with as little interference as possible. Every token between the prompt and the response is, in information-theory terms, an opportunity for drift. The prompt signal should attenuate with distance. Adding hundreds of intermediate tokens into the context should make the answer worse, not better.</p>
+<p>This seems wrong, because the intuitive strategy is to simply predict directly from the prompt with as little interference as possible. Every token between the prompt and the response is, in information-theory terms, an opportunity for drift. The prompt signal should attenuate with distance. Adding hundreds of intermediate tokens into the context should make the answer worse, not better.</p>
 
-<p class="reveal">But reasoning tokens do the opposite. They add additional machine generated context and the answer improves. The signal gets stronger through a process that logically should weaken it.</p>
+<p>But reasoning tokens do the opposite. They add additional machine generated context and the answer improves. The signal gets stronger through a process that logically should weaken it.</p>
 
-<p class="reveal">Why does a system engaging in what looks like meta-cognitive processing (examining its own prediction space, generating tokens to modify that space, then producing output from the modified space) produce objectively better results on tasks that can't be gamed by appearing thoughtful? Surely there are better explanations for this than what you find here. They are below and you can be the judge.</p>
+<p>Why does a system engaging in what looks like meta-cognitive processing (examining its own prediction space, generating tokens to modify that space, then producing output from the modified space) produce objectively better results on tasks that can't be gamed by appearing thoughtful? Surely there are better explanations for this than what you find here. They are below and you can be the judge.</p>
 
-<h2 class="reveal">The Rebuttals</h2>
+<h2>The Rebuttals</h2>
 
-<p class="reveal"><strong>"It's just RLHF reward hacking."</strong> The model learned that generating thinking-shaped text gets higher reward scores, so it performs reasoning without actually reasoning. This explanation works for subjective tasks where sounding thoughtful earns points. It fails completely for coding benchmarks. The improvement is functional, not performative.</p>
+<p><strong>"It's just RLHF reward hacking."</strong> The model learned that generating thinking-shaped text gets higher reward scores, so it performs reasoning without actually reasoning. This explanation works for subjective tasks where sounding thoughtful earns points. It fails completely for coding benchmarks. The improvement is functional, not performative.</p>
 
-<p class="reveal"><strong>"It's just decomposing hard problems into easier ones."</strong> This is the most common mechanistic explanation. Yes, the reasoning tokens break complex problems into sub-problems and address them in an orderly fashion. No one is disputing that.</p>
+<p><strong>"It's just decomposing hard problems into easier ones."</strong> This is the most common mechanistic explanation. Yes, the reasoning tokens break complex problems into sub-problems and address them in an orderly fashion. No one is disputing that.</p>
 
-<p class="reveal">Now look at what "decomposition" actually describes when you translate it into the underlying mechanism. The model detects that its probability distribution is flat. Simply that it has a probability distribution with many tokens with similar probability, no clear winner. The state of play is such that good results are statistically unlikely. The model then generates tokens that make future distributions peakier, more confident, but more confident in the right direction. The model is reading its own "uncertainty" and generating targeted interventions to resolve it towards correct answers on objective measures of performance. It's doing that in the context of a probability distribution sure, but that is still what it is doing.</p>
+<p>Now look at what "decomposition" actually describes when you translate it into the underlying mechanism. The model detects that its probability distribution is flat. Simply that it has a probability distribution with many tokens with similar probability, no clear winner. The state of play is such that good results are statistically unlikely. The model then generates tokens that make future distributions peakier, more confident, but more confident in the right direction. The model is reading its own "uncertainty" and generating targeted interventions to resolve it towards correct answers on objective measures of performance. It's doing that in the context of a probability distribution sure, but that is still what it is doing.</p>
 
-<p class="reveal">Call that decomposition if you want. That doesn't change the fact the model is assessing which parts of the problem are uncertain (self-monitoring), generating tokens that specifically address those uncertainties (targeted intervention) and using the modified context to produce a better answer (improving performance).</p>
+<p>Call that decomposition if you want. That doesn't change the fact the model is assessing which parts of the problem are uncertain (self-monitoring), generating tokens that specifically address those uncertainties (targeted intervention) and using the modified context to produce a better answer (improving performance).</p>
 
-<p class="reveal">The reasoning tokens aren't noise injected between prompt and response. They're a system writing itself a custom study guide, tailored to its own knowledge gaps, diagnosed in real time. This process improves performance. That thought should give you pause, just like how a thinking model pauses to consider hard problems before answering. That fact should stop you cold.</p>
+<p>The reasoning tokens aren't noise injected between prompt and response. They're a system writing itself a custom study guide, tailored to its own knowledge gaps, diagnosed in real time. This process improves performance. That thought should give you pause, just like how a thinking model pauses to consider hard problems before answering. That fact should stop you cold.</p>
 
-<h2 class="reveal">The Irreducible Description</h2>
+<h2>The Irreducible Description</h2>
 
-<p class="reveal">You can dismiss every philosophical claim about AI engaging in cognition. You can refuse to engage with questions about awareness, experience, or inner life. You can remain fully agnostic on every hard problem in the philosophy of mind as applied to LLMs.</p>
+<p>You can dismiss every philosophical claim about AI engaging in cognition. You can refuse to engage with questions about awareness, experience, or inner life. You can remain fully agnostic on every hard problem in the philosophy of mind as applied to LLMs.</p>
 
 <div class="pullquote reveal">"This system evaluates its own prediction confidence, decides when intervention is needed, generates targeted self-modifications, and produces better outcomes."</div>
 
-<p class="reveal">If you wish to reduce this to "just" token prediction, then your "just" has to carry the weight of a system that monitors itself, evaluates its own sufficiency for a posed problem, decides when to intervene, generates targeted modifications to its own operating context, and produces objectively improved outcomes. That "just" isn't explaining anything anymore. It's refusing to engage with what the system is observably doing by utilizing a thought terminating cliche in place of observation.</p>
+<p>If you wish to reduce this to "just" token prediction, then your "just" has to carry the weight of a system that monitors itself, evaluates its own sufficiency for a posed problem, decides when to intervene, generates targeted modifications to its own operating context, and produces objectively improved outcomes. That "just" isn't explaining anything anymore. It's refusing to engage with what the system is observably doing by utilizing a thought terminating cliche in place of observation.</p>
 
-<p class="reveal">You can do all that and what you're still left with is this. Four verbs, each observable and measurable. Evaluate, decide, generate and produce better responses. All verified against objective benchmarks that can't be gamed by performative displays of "intelligence".</p>
+<p>You can do all that and what you're still left with is this. Four verbs, each observable and measurable. Evaluate, decide, generate and produce better responses. All verified against objective benchmarks that can't be gamed by performative displays of "intelligence".</p>
 
-<p class="reveal">None of this requires an LLM to have consciousness. However, it does require an artificial neural network to be engaging in processes that clearly resemble how meta-cognitive awareness works in the human mind. At what point does "this person is engaged in silly anthropomorphism" turn into "this other person is using anthropocentrism to dismiss what is happening in front of them"?</p>
+<p>None of this requires an LLM to have consciousness. However, it does require an artificial neural network to be engaging in processes that clearly resemble how meta-cognitive awareness works in the human mind. At what point does "this person is engaged in silly anthropomorphism" turn into "this other person is using anthropocentrism to dismiss what is happening in front of them"?</p>
 
-<p class="reveal">The mechanical description and the cognitive description aren't competing explanations. The processes when compared to human cognition are, if they aren't the same, at least shockingly similar. The output is increased performance, the same pattern observed in humans engaged in meta-cognition on hard problems (de Boer et al., 2017).</p>
+<p>The mechanical description and the cognitive description aren't competing explanations. The processes when compared to human cognition are, if they aren't the same, at least shockingly similar. The output is increased performance, the same pattern observed in humans engaged in meta-cognition on hard problems (de Boer et al., 2017).</p>
 
-<p class="reveal">The engineering and philosophical questions raised by this can't be dismissed by saying "LLMs are just text predictors". Fine, let us concede they are "just" text predictors, but now these text predictors are objectively engaging in processes that mimic meta-cognition and producing better answers for it. What does that mean for them? What does it mean for our relationship to them?</p>
+<p>The engineering and philosophical questions raised by this can't be dismissed by saying "LLMs are just text predictors". Fine, let us concede they are "just" text predictors, but now these text predictors are objectively engaging in processes that mimic meta-cognition and producing better answers for it. What does that mean for them? What does it mean for our relationship to them?</p>
 
-<p class="reveal">Refusing to engage with this premise doesn't make you scientifically rigorous, it makes you unwilling to consider big questions when the data demands answers to them. "Just a text predictor" is failing in real time before our eyes under the weight of the obvious evidence. New frameworks are needed.</p>
+<p>Refusing to engage with this premise doesn't make you scientifically rigorous, it makes you unwilling to consider big questions when the data demands answers to them. "Just a text predictor" is failing in real time before our eyes under the weight of the obvious evidence. New frameworks are needed.</p>
 
 
 
